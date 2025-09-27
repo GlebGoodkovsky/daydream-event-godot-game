@@ -1,13 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://cayfcec55ujb8"]
+[gd_scene load_steps=4 format=3 uid="uid://cayfcec55ujb8"]
 
 [ext_resource type="Texture2D" uid="uid://cny5hqldkt3l2" path="res://icon.svg" id="1_ig7tw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(126.5, 127.5)
 
+[sub_resource type="TileSet" id="TileSet_ig7tw"]
+
 [node name="Main" type="Node"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(196, 101)
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 texture = ExtResource("1_ig7tw")
@@ -15,3 +18,7 @@ texture = ExtResource("1_ig7tw")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(-0.25, 0.25)
 shape = SubResource("RectangleShape2D_0xm2m")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(5, 0)
+tile_set = SubResource("TileSet_ig7tw")
